@@ -16,15 +16,6 @@ connection_string = os.environ["AZURE_SQL_CONNECTIONSTRING"]
 
 app = FastAPI()
 
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"], 
-    allow_methods=["*"], 
-    allow_headers=["*"], 
-    allow_credentials=True, 
-    max_age = 750,
-)
-
 @app.get("/")
 def root():
     print("Root of Person API")
